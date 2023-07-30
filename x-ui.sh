@@ -94,7 +94,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/MHSanaei/3x-ui/main/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/raviya2007/x-ui/main/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -113,7 +113,7 @@ update() {
         fi
         return 0
     fi
-    bash <(curl -Ls https://raw.githubusercontent.com/MHSanaei/3x-ui/main/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/raviya2007/x-ui/main/install.sh)
     if [[ $? == 0 ]]; then
         LOGI "Update is complete, Panel has automatically restarted "
         exit 0
@@ -335,7 +335,7 @@ enable_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/MHSanaei/3x-ui/raw/main/x-ui.sh
+    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/raviya2007/x-ui/raw/main/x-ui.sh
     if [[ $? != 0 ]]; then
         echo ""
         LOGE "Failed to download script, Please check whether the machine can connect Github"
@@ -916,20 +916,22 @@ remove_iplimit(){
 }
 
 show_usage() {
-    echo "x-ui control menu usages: "
-    echo "------------------------------------------"
-    echo -e "x-ui              - Enter control menu"
-    echo -e "x-ui start        - Start x-ui "
-    echo -e "x-ui stop         - Stop  x-ui "
-    echo -e "x-ui restart      - Restart x-ui "
-    echo -e "x-ui status       - Show x-ui status"
-    echo -e "x-ui enable       - Enable x-ui on system startup"
-    echo -e "x-ui disable      - Disable x-ui on system startup"
-    echo -e "x-ui log          - Check x-ui logs"
-    echo -e "x-ui update       - Update x-ui "
-    echo -e "x-ui install      - Install x-ui "
-    echo -e "x-ui uninstall    - Uninstall x-ui "
-    echo "------------------------------------------"
+    echo -e "${green}x-ui ${last_version}${plain} installation finished, it is running now..."
+    echo -e ""
+    echo -e "${random}x-ui control menu usages: ${plain}"
+    echo -e "${red}----------------------------------------------${plain}"
+    echo -e "${yellow}x-ui  ${plain}             - Enter     Admin menu"
+    echo -e "${yellow}x-ui start ${plain}        - Start     x-ui"
+    echo -e "${yellow}x-ui stop ${plain}         - Stop      x-ui"
+    echo -e "${yellow}x-ui restart ${plain}      - Restart   x-ui"
+    echo -e "${yellow}x-ui status  ${plain}      - Show      x-ui status"
+    echo -e "${yellow}x-ui enable ${plain}       - Enable    x-ui on system startup"
+    echo -e "${yellow}x-ui disable ${plain}      - Disable   x-ui on system startup"
+    echo -e "${yellow}x-ui log  ${plain}         - Check     x-ui logs"
+    echo -e "${yellow}x-ui update  ${plain}      - Update    x-ui"
+    echo -e "${yellow}x-ui install  ${plain}     - Install   x-ui"
+    echo -e "${yellow}x-ui uninstall  ${plain}   - Uninstall x-ui"
+    echo -e "${red}----------------------------------------------${plain}"
 }
 
 show_menu() {
